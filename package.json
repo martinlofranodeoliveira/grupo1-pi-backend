@@ -1,5 +1,28 @@
 {
   "dependencies": {
-    "express": "^4.18.2"
-  }
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.25.8",
+    "uuid": "^9.0.0"
+  },
+  "name": "grupo1-pi-backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinlofranodeoliveira/grupo1-pi-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinlofranodeoliveira/grupo1-pi-backend/issues"
+  },
+  "homepage": "https://github.com/martinlofranodeoliveira/grupo1-pi-backend#readme",
+  "description": ""
 }
