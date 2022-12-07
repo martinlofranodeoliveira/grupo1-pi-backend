@@ -2,7 +2,7 @@ const { sequelize, Datatypes} = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
     let alias = 'FormaPagamento';
-    const Produto = sequelize.define('FormaPagamento', {
+    const FormaPagamento = sequelize.define('FormaPagamento', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -19,4 +19,12 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
         underscored: true
     });
+    FormaPagamento.associate = function(models){
+        FormaPagamento.belongsTo(models.Pagamento, {
+            as: "pagamentos",
+            foreignKey: "formapg_id",
+            timestamps: false
+        });
+    };
+    return FormaPagamento;
 };

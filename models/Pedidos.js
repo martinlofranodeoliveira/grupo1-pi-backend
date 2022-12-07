@@ -2,7 +2,7 @@ const { sequelize, Datatypes} = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
     let alias = 'Pedido';
-    const Produto = sequelize.define('Pedido', {
+    const Pedido = sequelize.define('Pedido', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -28,4 +28,27 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
         underscored: true
     });
+
+    Pedido.associate = function(models){
+        Pedido.hasMany(models.ProdutoPedido, {
+            as: "produtoPedidos",
+            foreignKey: "pedidos_id",
+            timestamps: false
+        });
+    };
+    Pedido.associate = function(models){
+        Pedido.belongsTo(models.Usuario, {
+            as: "usuarios",
+            foreignKey: "usuarios_id", 
+            timestamps: false
+        });
+    };
+    Pedido.associate = function(models){
+        Pedido.belongsTo(models.Pagamento, {
+            as: "pagamentos",
+            foreignKey: "pagamentos_id",
+            timestamps: false
+        });
+    };
+    return Pedido;
 };

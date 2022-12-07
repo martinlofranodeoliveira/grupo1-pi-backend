@@ -43,8 +43,22 @@ module.exports = (sequelize, DataTypes) => {
     });
     Produto.associate = function(models){
         Produto.belongsTo(models.Categoria, {
-            as: 'categoria',
+            as: 'categorias',
             foreignKey: 'categorias_id',
+            timestamps:false
+        });
+    };
+    Produto.associate = function(models){
+        Produto.belongsTo(models.Marca, {
+            as: 'marcas',
+            foreignKey: 'marcas_id',
+            timestamps:false
+        });
+    };
+    Produto.associate = function(models){
+        Produto.hasMany(models.ProdutoPedido, {
+            as: 'produtoPedidos',
+            foreignKey: 'produtos_id',
             timestamps:false
         });
     };
