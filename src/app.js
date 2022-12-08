@@ -23,6 +23,7 @@ const routerAdmin = require("./routes/admin.js"); */
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+
 //USO DAS ROTAS ------------------------------------------------------------------------
 app.use("/home", routerHome);
 app.use("/users", Users);
