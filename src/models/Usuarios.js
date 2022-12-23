@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         telefone: {
             type: DataTypes.STRING,
         },
-        foto: {
+        Image: {
             type: DataTypes.STRING
         }
     },
@@ -33,21 +33,7 @@ module.exports = (sequelize, DataTypes) => {
         underscored: true
     });
     
-    Usuario.associate = function(models){
-        Usuario.belongsTo(models.Endereco,
-            {
-                as: "enderecos",
-                foreignKey: "usuario_id",
-                timestamps:false
-            });
-    };
-    Usuario.associate = function(models){
-        Usuario.belongsTo(models.Pedido,
-            {
-                as: "pedidos",
-                foreignKey: "usuario_id",
-                timestamps:false
-            });
-    };
+  
+    
     return Usuario;
 };

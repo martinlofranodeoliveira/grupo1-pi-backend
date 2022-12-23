@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        avaliação: {
+        avaliacao: {
             type: DataTypes.INTEGER,
         },
         categorias_id: {

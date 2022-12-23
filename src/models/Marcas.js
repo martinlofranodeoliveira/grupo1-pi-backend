@@ -19,12 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
         underscored: true
     });
-    Marca.associate = function(models){
-        Marca.belongsTo(models.Produto, {
-            as: "produtos",
-            foreignKey: "marcas_id",
-            timestamps: false
-        });
-    };
+   
+    
     return Marca;
-};
+}

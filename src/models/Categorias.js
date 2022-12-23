@@ -19,12 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
         underscored: true
     });
-    Categoria.associate = function(models){
-        Categoria.belongsTo(models.Produto, {
-            as: "produtos",
-            foreignKey: "categorias_id",
-            timestamps: false
-        });
-    };
+    
+    
     return Categoria;
 };

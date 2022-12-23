@@ -1,4 +1,4 @@
-const { sequelize, Datatypes} = require('sequelize');
+
 
 module.exports = (sequelize, DataTypes) => {
     let alias = 'Endereco';
