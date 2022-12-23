@@ -27,14 +27,14 @@ module.exports = (sequelize, DataTypes) => {
         avaliacao: {
             type: DataTypes.INTEGER,
         },
-        categorias_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        marcas_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        }
+        // categorias_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false
+        // },
+        // marcas_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false
+        // }
     },
     {
         tableName: 'produtos',

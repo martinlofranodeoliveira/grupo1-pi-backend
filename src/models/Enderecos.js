@@ -28,10 +28,10 @@ module.exports = (sequelize, DataTypes) => {
         complemento: {
             type: DataTypes.STRING
         },
-        usuarios_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        }
+        // usuarios_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false
+        // }
         
     },
     {

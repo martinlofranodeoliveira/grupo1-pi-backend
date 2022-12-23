@@ -12,10 +12,10 @@ module.exports = (sequelize, DataTypes) => {
         confirmado: {
             type: DataTypes.INTEGER,
         },
-        formapg_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        }
+        // formapg_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false
+        // }
     },
     {
         tableName: 'pagamentos',

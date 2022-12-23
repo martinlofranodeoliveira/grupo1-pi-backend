@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         telefone: {
             type: DataTypes.STRING,
         },
-        Image: {
+        image: {
             type: DataTypes.STRING
         }
     },
@@ -32,7 +32,14 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
         underscored: true
     });
-    
+    Usuario.associate = function(models){
+        Usuario.hasOne(models.Endereco, 
+            {
+                as: "enderecos",
+                foreignKey: "usuarios_id",
+                timestamps:false
+            })
+    }
   
     
     return Usuario;

@@ -19,7 +19,13 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
         underscored: true
     });
-    
+    Categoria.associate = function(models){
+        Categoria.hasMany(models.Produto, {
+            as: "produtos",
+            foreignKey: "categorias_id",
+            timestamps: false
+        })
+       }
     
     return Categoria;
 };

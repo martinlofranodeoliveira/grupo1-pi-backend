@@ -4,7 +4,12 @@ const Op = db.Sequelize.Op;
 
 const Produtos = {
     list: async (req, res) => {
-       await db.Produto.findAll()
+       await db.Produto.findAll({
+        include: [
+            {association: "Categoria"},
+            {association: "Marca"}
+        ]
+       })
             .then((produtos) => {
                 res.status(200).json(produtos);
             })
@@ -74,7 +79,12 @@ const Produtos = {
     },
     detail: async (req, res) => {
         /* detalhar produto */
-        await db.Produto.findByPk(req.params.id)
+        await db.Produto.findByPk(req.params.id, {
+            include: [
+                {association: "Categoria"},
+                {association: "Marca"}
+            ]
+        })
             .then((produto) => {
                 res.status(200).json(produto);
             })
@@ -90,6 +100,11 @@ const Produtos = {
                     [Op.like]: '%' + req.params.nome + '%'
                 }
             }
+        }, {
+            include: [
+                {association: "Categoria"},
+                {association: "Marca"}
+            ]
         })
             .then((produto) => {
                 res.status(200).json(produto);

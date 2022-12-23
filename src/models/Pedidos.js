@@ -13,14 +13,14 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
             allowNull: false,
         },
-        usuarios_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        pagamentos_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        }
+        // usuarios_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false
+        // },
+        // pagamentos_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false
+        // }
 
     },
     {
