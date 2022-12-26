@@ -1,51 +1,31 @@
-
-
+'use strict';
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'Endereco';
-    const Endereco = sequelize.define('Endereco', {
-        id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true,
-            allowNull: false,
-        },
-        cep: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        logradouro: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        cidade: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        estado: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        complemento: {
-            type: DataTypes.STRING
-        },
-        usuarios_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        }
-        
-    },
-    {
-        tableName: 'enderecos',
-        timestamps: false,
-        underscored: true
-    });
-    Endereco.associate = function(models){
-        Endereco.belongsTo(models.Usuario,
-            {
-                as: "usuarios",
-                foreignKey: "usuarios_id",
-                timestamps:false
-            });
-    };
-    return Endereco;
+  class Enderecos extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      Enderecos.belongsTo(models.Usuarios, {
+        foreignKey: 'usuario_id',
+        as: 'usuario'
+      })
+    }
+  }
+  Enderecos.init({
+    cep: DataTypes.INTEGER,
+    logradouro: DataTypes.STRING,
+    cidade: DataTypes.STRING,
+    estado: DataTypes.STRING,
+    complemento: DataTypes.STRING,
+    usuario_id: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'Enderecos',
+  });
+  return Enderecos;
 };
