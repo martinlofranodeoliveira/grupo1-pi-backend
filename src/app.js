@@ -1,18 +1,23 @@
 const express = require('express');
+const dotenv = require('dotenv');
+
+const port = process.env.PORT || 3000
 const app = express();
-const port =  process.env.PORT ||3000
 
 /* routes */
-const usuario = require('./routes/usuario');
+const user = require('./routes/user.route');
+const produto = require('./routes/produto.route');
 
 
 /* midewals */
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
+dotenv.config(); 
 
 
 /* routes */
-app.use('/usuario', usuario);
+app.use('/user', user);
+app.use('/produto', produto);
 
 /* serve */
 app.listen(port, () => {

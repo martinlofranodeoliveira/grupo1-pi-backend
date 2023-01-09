@@ -13,10 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       Produto.belongsTo(models.Categorias, {
         foreignKey: 'categorias_id',
         as: 'categorias'
-      }),
-      Produto.belongsTo(models.Marcas, {
-        foreignKey: 'marcas_id',
-        as: 'marcas'
       })
     }
   }
@@ -25,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     descricao: DataTypes.STRING,
     preco: DataTypes.DECIMAL(5, 2),
     estoque: DataTypes.INTEGER,
-    avaliação: DataTypes.INTEGER,
+    avaliaão: DataTypes.INTEGER,
     categorias_id: DataTypes.INTEGER,
     marcas_id: DataTypes.INTEGER
   }, {
