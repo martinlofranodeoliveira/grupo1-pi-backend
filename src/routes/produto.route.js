@@ -10,7 +10,7 @@ const { authMIddleware } = require('../middleware/auth.middleware');
 router.post("/create", authMIddleware, createProduct);
 router.post("/categoria/create", authMIddleware, createCategoria);
 router.get("/list", authMIddleware, listProducts);
-router.get("/myproducts", authMIddleware, myProducts)
+router.get("/myproducts/:id", myProducts)
 
 
 module.exports = router;

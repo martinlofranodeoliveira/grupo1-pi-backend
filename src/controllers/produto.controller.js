@@ -68,9 +68,9 @@ const listProducts = async (req, res) => {
 
 const myProducts = async (req, res) => {
   try {
-    const idUser = req.userId;
+    const { id } = req.params;
 
-    const products = await MyProducts(idUser)
+    const products = await MyProducts(id)
 
 
 
