@@ -10,33 +10,34 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nome: {
-         allowNull: false,
+        allowNull: false,
         type: Sequelize.STRING
       },
       descricao: {
-         allowNull: false,
+        allowNull: false,
         type: Sequelize.STRING
       },
       preco: {
-         allowNull: false,
+        allowNull: false,
         type: Sequelize.DECIMAL(5, 2)
       },
       estoque: {
-         allowNull: false,
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       avaliação: {
-         allowNull: false,
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       categorias_id: {
-         allowNull: false,
+        allowNull: false,
         type: Sequelize.INTEGER
       },
-      marcas: {
-         allowNull: false,
-        type: Sequelize.INTEGER
+      criador: {
+        allowNull: false,
+        type: Sequelize.STRING
       },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

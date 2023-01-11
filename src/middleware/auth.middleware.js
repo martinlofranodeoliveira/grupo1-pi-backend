@@ -33,7 +33,7 @@ dotenv.config();
         return res.status(401).send({ message: 'Unauthorized' })
       }
 
-      req.userId = user._id;
+      req.userId = user.id;
 
 
       return next();
