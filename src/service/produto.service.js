@@ -18,8 +18,21 @@ const saveProduct = (nome, descricao, preco, estoque, avaliação, categorias_id
 
 }
 
-const list = (idUser) => {
-  /* rertonar o nome do usuario que criou o produto e as categorias so pode aparecer as que ele criou */
+const list = () => {
+
+  const resuts = db.Produto.findAll({
+
+  });
+
+
+  return resuts;
+
+
+
+}
+
+const MyProducts = (idUser) => {
+  /* restonar com todos os dados da categoria e do criador do produto*/
   const resuts = db.Produto.findAll({
     where: {
       criador: idUser
@@ -27,19 +40,22 @@ const list = (idUser) => {
     include: [
       {
         model: db.Categorias,
-        as: 'categorias'
+        as: 'categorias',
+        attributes: ['nome']
       },
       {
         model: db.Usuarios,
-        as: 'usuarios'
+        as: 'usuarios',
+        attributes: ['nome']
       }
     ]
   });
-
+  
 
   return resuts;
 
 }
+
 
 const saveCategoria = (nome, idUser) => {
 
@@ -68,5 +84,6 @@ module.exports = {
   saveProduct,
   list,
   saveCategoria,
-  buscarCategoria
+  buscarCategoria,
+  MyProducts
 }

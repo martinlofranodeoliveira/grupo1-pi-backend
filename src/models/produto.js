@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'criador',
         as: 'usuarios'
       });
+
     }
 }
   Produto.init({
