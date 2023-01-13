@@ -1,4 +1,4 @@
-const { saveProduct, list, saveCategoria, buscarCategoria, MyProducts } = require('../service/produto.service')
+const { saveProduct, list, saveCategoria, buscarCategoria, MyProducts, listbytitle } = require('../service/produto.service')
 
 const createProduct = async (req, res) => {
   try {
@@ -122,6 +122,38 @@ const createCategoria = async (req, res) => {
 
 }
 
+const SearchByTitle = async (req, res) => {
+try {
+  const { nome } = req.query;
+
+  const products = await listbytitle(nome)
+
+  if(products.length === 0){
+    return res.status(400).send({message: 'Nenhum produto encontrado'})
+  }
+
+
+  res.status(200).send({
+    resuts: products.map((Item) => ({
+      id: Item.id,
+      nome: Item.nome,
+      descricao: Item.descricao,
+      preco: Item.preco,
+      estoque: Item.estoque,
+      avaliação: Item.avaliação,
+      categorias_id: Item.categorias_id,
+    })
+    )
+  });
+
+
+
+}
+catch (error) {
+  res.status(500).send(error.message)
+}
+
+}
 
 
 
@@ -133,5 +165,6 @@ module.exports = {
   createProduct,
   listProducts,
   createCategoria,
-  myProducts
+  myProducts,
+  SearchByTitle
 }

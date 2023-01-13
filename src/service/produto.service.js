@@ -1,4 +1,6 @@
 const db = require('../models/');
+const like = require('sequelize').Op.like;
+
 
 
 const saveProduct = (nome, descricao, preco, estoque, avaliação, categorias_id, idUser) => {
@@ -50,7 +52,7 @@ const MyProducts = (idUser) => {
       }
     ]
   });
-  
+
 
   return resuts;
 
@@ -79,11 +81,39 @@ const buscarCategoria = async (id) => {
   return resuts;
 }
 
+const listbytitle = async (nome) => {
+  const resuts = await db.Produto.findAll({
+    /* restonar o porduto intero  */
+    where: {
+      nome: {
+        [like]: `%${nome}%`
+      }
+    },
+    include: [
+      {
+        model: db.Categorias,
+        as: 'categorias',
+        attributes: ['nome']
+      },
+      {
+        model: db.Usuarios,
+        as: 'usuarios',
+        attributes: ['nome']
+      }
+    ] 
+  })
+  console.log(resuts);
+  return resuts;
+}
+
+
+
 
 module.exports = {
   saveProduct,
   list,
   saveCategoria,
   buscarCategoria,
-  MyProducts
+  MyProducts,
+  listbytitle
 }
