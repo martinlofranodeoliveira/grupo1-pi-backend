@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     descricao: DataTypes.STRING,
     preco: DataTypes.DECIMAL(5, 2),
     estoque: DataTypes.INTEGER,
-    avaliação: DataTypes.INTEGER,
+    avaliacao: DataTypes.INTEGER,
     categorias_id: DataTypes.INTEGER,
     criador: DataTypes.STRING
   }, {

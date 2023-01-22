@@ -2,15 +2,20 @@ const { saveProduct, list, saveCategoria, buscarCategoria, MyProducts, listbytit
 
 const createProduct = async (req, res) => {
   try {
-    const { nome, descricao, preco, estoque, avaliação, categorias_id } = req.body;
+    const { nome, descricao, preco, estoque, avaliacao, categorias_id} = req.body;
     const idUser = req.userId;
 
-    console.log(idUser);
+    
+
+    console.log(req.body);
 
 
-    if (!nome || !descricao || !preco || !estoque || !avaliação || !categorias_id) {
+   /* validar campos de maneria que so de erro se estiver faltando alguma informação */
+    if (!nome || !descricao || !preco || !estoque || !avaliacao || !categorias_id) {
+
       return res.status(400).send({ message: 'Todos os campos são obrigatórios' });
     }
+
 
 
     const Categoria = await buscarCategoria(categorias_id)
@@ -27,7 +32,7 @@ const createProduct = async (req, res) => {
 
 
 
-    await saveProduct(nome, descricao, preco, estoque, avaliação, categorias_id, idUser);
+    await saveProduct(nome, descricao, preco, estoque, avaliacao, categorias_id, idUser);
 
 
 
@@ -46,6 +51,7 @@ const listProducts = async (req, res) => {
 
 
     const products = await list();
+    console.log(products);
 
     res.status(200).send({
       resuts: products.map((Item) => ({
@@ -154,6 +160,9 @@ catch (error) {
 }
 
 }
+
+
+
 
 
 
