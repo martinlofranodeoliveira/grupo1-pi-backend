@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "ativ$webmb",
     "database": "pi",
     "host": "127.0.0.1",
     "dialect": "mysql"
