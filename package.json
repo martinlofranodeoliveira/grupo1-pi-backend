@@ -1,31 +1,26 @@
 {
-  "dependencies": {
-    "express": "^4.18.2",
-    "method-override": "^3.0.0",
-    "multer": "^1.4.5-lts.1",
-    "mysql2": "^2.3.3",
-    "nodemon": "^2.0.20",
-    "sequelize": "^6.25.8",
-    "sequelize-cli": "^6.5.2",
-    "uuid": "^9.0.0"
-  },
-  "name": "grupo1-pi-backend",
+  "name": "backend",
   "version": "1.0.0",
+  "description": "",
   "main": "app.js",
   "scripts": {
-    "dev" : "nodemon src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/martinlofranodeoliveira/grupo1-pi-backend.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/martinlofranodeoliveira/grupo1-pi-backend/issues"
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.8.0",
+    "sequelize": "^6.28.0"
   },
-  "homepage": "https://github.com/martinlofranodeoliveira/grupo1-pi-backend#readme",
-  "description": ""
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "sequelize-cli": "^6.5.2"
+  }
 }
