@@ -12,6 +12,26 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
+   await queryInterface.bulkInsert('Categorias', [{
+    nome: 'suprimentos',
+    criador: 'Demetrius',
+    createdAt: new Date(),
+    updatedAt: new Date()
+   },
+   {
+    nome: 'equipamentos de medição',
+    criador: 'Italo',
+    createdAt: new Date(),
+    updatedAt: new Date()
+   },
+   {
+    nome: 'material cirurgico',
+    criador: 'Martin',
+    createdAt: new Date(),
+    updatedAt: new Date()
+   }   
+  ]
+   )
   },
 
   async down (queryInterface, Sequelize) {

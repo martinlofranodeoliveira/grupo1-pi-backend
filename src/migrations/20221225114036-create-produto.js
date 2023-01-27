@@ -25,7 +25,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      avaliação: {
+      avaliacao: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
