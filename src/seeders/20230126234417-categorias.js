@@ -29,6 +29,30 @@ module.exports = {
     criador: 'Martin',
     createdAt: new Date(),
     updatedAt: new Date()
+   },
+   {
+    nome: 'respiratorio',
+    criador: 'Demetrius',
+    createdAt: new Date(),
+    updatedAt: new Date()
+   },
+   {
+    nome: 'curativo',
+    criador: 'Italo',
+    createdAt: new Date(),
+    updatedAt: new Date()
+   },
+   {
+    nome: 'higiene',
+    criador: 'Martin',
+    createdAt: new Date(),
+    updatedAt: new Date()
+   },
+   {
+    nome: 'Equipamento de Proteção Individual',
+    criador: 'Demetrius',
+    createdAt: new Date(),
+    updatedAt: new Date()
    }   
   ]
    )

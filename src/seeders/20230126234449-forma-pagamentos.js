@@ -12,6 +12,23 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
+   await queryInterface.bulkInsert('FormaPagamento', [
+    {
+      nome: 'pix',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      nome: 'cartão de credito',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      nome:'boleto',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }
+   ])
   },
 
   async down (queryInterface, Sequelize) {
