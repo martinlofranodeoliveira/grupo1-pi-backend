@@ -90,12 +90,25 @@ module.exports = {
     imagem: 'alcool.jpg',
     preco: 35.00,
     estoque: 100,
-    avaliacao: 6,
+    avaliacao: 5,
+    categorias_id: 6,
+    criador: 'Demetrius',
+    createdAt: new Date(),
+    updatedAt: new Date()
+   },
+   {
+    nome: 'Meia Antiembólica Comprinet Pro 18mmHg Panturrilha Branca - JOBST',
+    descricao: 'Meia antiembolica (prevenção da Trombose Venosa Profunda), indicada para pacientes que vão fazer procedimentos cirúrgicos ou passar muito tempo acamados.',
+    imagem: 'meia.jpg',
+    preco: 55.90,
+    estoque: 100,
+    avaliacao: 5,
     categorias_id: 1,
     criador: 'Demetrius',
     createdAt: new Date(),
     updatedAt: new Date()
-   }]
+   }
+  ]
    )
   },
 
