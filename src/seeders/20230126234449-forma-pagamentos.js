@@ -12,7 +12,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-   await queryInterface.bulkInsert('FormaPagamento', [
+   await queryInterface.bulkInsert('FormaPagamentos', [
     {
       nome: 'pix',
       createdAt: new Date(),
